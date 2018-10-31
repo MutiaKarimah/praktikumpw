@@ -2,17 +2,16 @@
 	<head>
 		<title> MGI's GAMESTORE</title>
 		<link href="css/style.css" rel="stylesheet">
-		
-	</head>
 	<?php
 session_start();
 if(isset($_SESSION["username"])){
-	echo header("location:siap.php");
 }else{
-;
+ echo header("location:login.php");
  
 }
-?>
+?>	
+	</head>
+	
 <body>
 	<div class="sidebar">
    		 		<div class="search">
@@ -40,16 +39,14 @@ if(isset($_SESSION["username"])){
 		<aside>
 		<div class="menu">
 			<div class="login">
-				<form method="post" action="login.php">					
-						<label for="username"><b>Username</b></label>
-						<input type="text" placeholder="Enter Username" name="iusername" required></input>
-						<label for="password"><b>Password</b></label>
-						<input type="password" placeholder="Enter Password" name="ipassword" required></input>
-						<button type="submit" value="Login">Login</button>
-						<label><input type="checkbox" checked="checked" name="remember"> Remember me |						</label>
-						<label><a href="#"> Sign Up </label></a>					
-				</form>
+			<form method="post" action="/log_out.php">	
+				 <div class="foto"></div>
+				<h3> Username	: Admin </h3>
+				<h3> ID	: #001 </h3> 
+				<button type="submit" value="Login">Logout</button>
 			</div>
+			</form><br>
+
 			<hr class="line">
 			<a href="#"><h3>Cara Memesan</h3></a>
 			<hr class="line">
@@ -225,13 +222,18 @@ if(isset($_SESSION["username"])){
 <footer>
 <hr class="lineShading">
 <div class="footer1">
-test
+<i class="far fa-home"></i>Alamat Toko Pusat<br>
+<i class="far fa-home"></i>Alamat Toko Cabang #1<br>
+<i class="far fa-home"></i>Alamat Toko Cabang #2<br>
+<i class="far fa-home"></i>Alamat Toko Cabang #3<br>
+<i class="far fa-home"></i>Alamat Toko Cabang #4<br>
 </div>
 <div class="footer2">
-test2
+No. Telepon
+E-MAIL
 </div>
 <div class="contact">
-Contact
+Website ini dibuat oleh MGI studio untuk <br>memudahka pembelian DVD diseluruh Indonesia.
 </div>
 </footer>
 </body>

@@ -4,15 +4,7 @@
 		<link href="css/style.css" rel="stylesheet">
 		
 	</head>
-	<?php
-session_start();
-if(isset($_SESSION["username"])){
-	echo header("location:siap.php");
-}else{
-;
- 
-}
-?>
+	
 <body>
 	<div class="sidebar">
    		 		<div class="search">
@@ -40,15 +32,17 @@ if(isset($_SESSION["username"])){
 		<aside>
 		<div class="menu">
 			<div class="login">
-				<form method="post" action="login.php">					
-						<label for="username"><b>Username</b></label>
-						<input type="text" placeholder="Enter Username" name="iusername" required></input>
-						<label for="password"><b>Password</b></label>
-						<input type="password" placeholder="Enter Password" name="ipassword" required></input>
-						<button type="submit" value="Login">Login</button>
-						<label><input type="checkbox" checked="checked" name="remember"> Remember me |						</label>
-						<label><a href="#"> Sign Up </label></a>					
-				</form>
+				 <?php
+					ob_start();
+					session_start();
+						ob_end_clean();
+					if(isset($_SESSION["username"])){
+						echo "BERHASIL";
+						echo "<a href='log_out.php'>Logout</a>";
+						}else{
+							echo header("location:form_login.php");
+						}
+					?> 
 			</div>
 			<hr class="line">
 			<a href="#"><h3>Cara Memesan</h3></a>
@@ -79,7 +73,7 @@ if(isset($_SESSION["username"])){
 							
 							<div class="shop-box">
 								<h3>Dota 2 Update V.7.9<br>Rp.15.000</h3>
-								<a href="DVDGames/OrderID1.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDGames/OrderID1.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 
@@ -96,7 +90,7 @@ if(isset($_SESSION["username"])){
 							
 							<div class="shop-box">
 								<h3>Windows 10 Pro + Retail<br>Rp.35.000</h3>
-								<a href="DVDSoftware/OrderID1.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDSoftware/OrderID1.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 
@@ -113,7 +107,7 @@ if(isset($_SESSION["username"])){
 												
 							<div class="shop-box">
 								<h3>Palladins Update v.5.6<br>Rp.10.000</h3>
-								<a href="DVDGames/OrderID2.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDGames/OrderID2.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 						
@@ -130,7 +124,7 @@ if(isset($_SESSION["username"])){
 							
 							<div class="shop-box">
 								<h3>Dota 2 Update V.7.9<br>Rp.15.000</h3>
-								<a href="DVDGames/OrderID1.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDGames/OrderID1.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 
@@ -147,7 +141,7 @@ if(isset($_SESSION["username"])){
 							
 							<div class="shop-box">
 								<h3>Windows 10 Pro + Retail<br>Rp.35.000</h3>
-								<a href="DVDSoftware/OrderID1.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDSoftware/OrderID1.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 
@@ -164,7 +158,7 @@ if(isset($_SESSION["username"])){
 												
 							<div class="shop-box">
 								<h3>Palladins Update v.5.6<br>Rp.10.000</h3>
-								<a href="DVDGames/OrderID2.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDGames/OrderID2.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 
@@ -181,7 +175,7 @@ if(isset($_SESSION["username"])){
 							
 							<div class="shop-box">
 								<h3>Dota 2 Update V.7.9<br>Rp.15.000</h3>
-								<a href="DVDGames/OrderID1.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDGames/OrderID1.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 
@@ -198,7 +192,7 @@ if(isset($_SESSION["username"])){
 							
 							<div class="shop-box">
 								<h3>Windows 10 Pro + Retail<br>Rp.35.000</h3>
-								<a href="DVDSoftware/OrderID1.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDSoftware/OrderID1.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 
@@ -215,7 +209,7 @@ if(isset($_SESSION["username"])){
 												
 							<div class="shop-box">
 								<h3>Palladins Update v.5.6<br>Rp.10.000</h3>
-								<a href="DVDGames/OrderID2.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDGames/OrderID2.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 			
