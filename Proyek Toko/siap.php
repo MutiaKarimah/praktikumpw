@@ -39,7 +39,7 @@ if(isset($_SESSION["username"])){
 		<aside>
 		<div class="menu">
 			<div class="login">
-			<form method="post" action="/log_out.php">	
+			<form method="post" action="log_out.php">	
 				 <div class="foto"></div>
 				<h3> Username	: Admin </h3>
 				<h3> ID	: #001 </h3> 
