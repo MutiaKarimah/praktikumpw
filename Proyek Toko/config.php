@@ -3,7 +3,7 @@
 $server = "localhost";
 $user = "root";
 $password = "";
-$nama_database = "mja's";
+$nama_database = "db_mja";
 
 $db = mysqli_connect($server, $user, $password, $nama_database);
 

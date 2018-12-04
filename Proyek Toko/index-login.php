@@ -2,7 +2,18 @@
 	<head>
 		<title> MGI's GAMESTORE</title>
 		<link href="css/style.css" rel="stylesheet">
-		
+	<?php
+	require_once('config.php');
+$query = "SELECT * FROM tb_user ";
+session_start();
+if(isset($_SESSION["username"])){
+}else{
+ echo header("location:form-login.php");
+ 
+}
+
+    
+?>	
 	</head>
 	
 <body>
@@ -32,18 +43,13 @@
 		<aside>
 		<div class="menu">
 			<div class="login">
-				 <?php
-					ob_start();
-					session_start();
-						ob_end_clean();
-					if(isset($_SESSION["username"])){
-						echo "BERHASIL";
-						echo "<a href='../log_out.php'>Logout</a>";
-						}else{
-							echo header("location:form_login.php");
-						}
-					?> 
+			<form method="post" action="/log_out.php">	
+				 <div class="foto"></div>
+				<h4> Username	: <?php echo $_SESSION['username'];  ?> </h3>
+				<h4> ID	: #001 </h4> 
+				<button type="submit" value="Login">Logout</button>
 			</div>
+			</form><br>
 			<hr class="line">
 			<a href="#"><h3>Cara Memesan</h3></a>
 			<hr class="line">
@@ -73,7 +79,7 @@
 							
 							<div class="shop-box">
 								<h3>Dota 2 Update V.7.9<br>Rp.15.000</h3>
-								<a href="DVDGames/OrderID1.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDGames/OrderID1.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 
@@ -90,7 +96,7 @@
 							
 							<div class="shop-box">
 								<h3>Windows 10 Pro + Retail<br>Rp.35.000</h3>
-								<a href="DVDSoftware/OrderID1.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDSoftware/OrderID1.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 
@@ -107,7 +113,7 @@
 												
 							<div class="shop-box">
 								<h3>Palladins Update v.5.6<br>Rp.10.000</h3>
-								<a href="DVDGames/OrderID2.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDGames/OrderID2.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 						
@@ -124,7 +130,7 @@
 							
 							<div class="shop-box">
 								<h3>Dota 2 Update V.7.9<br>Rp.15.000</h3>
-								<a href="DVDGames/OrderID1.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDGames/OrderID1.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 
@@ -141,7 +147,7 @@
 							
 							<div class="shop-box">
 								<h3>Windows 10 Pro + Retail<br>Rp.35.000</h3>
-								<a href="DVDSoftware/OrderID1.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDSoftware/OrderID1.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 
@@ -158,7 +164,7 @@
 												
 							<div class="shop-box">
 								<h3>Palladins Update v.5.6<br>Rp.10.000</h3>
-								<a href="DVDGames/OrderID2.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDGames/OrderID2.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 
@@ -175,7 +181,7 @@
 							
 							<div class="shop-box">
 								<h3>Dota 2 Update V.7.9<br>Rp.15.000</h3>
-								<a href="DVDGames/OrderID1.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDGames/OrderID1.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 
@@ -192,7 +198,7 @@
 							
 							<div class="shop-box">
 								<h3>Windows 10 Pro + Retail<br>Rp.35.000</h3>
-								<a href="DVDSoftware/OrderID1.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDSoftware/OrderID1.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 
@@ -209,7 +215,7 @@
 												
 							<div class="shop-box">
 								<h3>Palladins Update v.5.6<br>Rp.10.000</h3>
-								<a href="DVDGames/OrderID2.html" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="DVDGames/OrderID2.php" class="primary-btn cta-btn">Buy now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 			
@@ -219,13 +225,18 @@
 <footer>
 <hr class="lineShading">
 <div class="footer1">
-test
+<i class="far fa-home"></i>Alamat Toko Pusat<br>
+<i class="far fa-home"></i>Alamat Toko Cabang #1<br>
+<i class="far fa-home"></i>Alamat Toko Cabang #2<br>
+<i class="far fa-home"></i>Alamat Toko Cabang #3<br>
+<i class="far fa-home"></i>Alamat Toko Cabang #4<br>
 </div>
 <div class="footer2">
-test2
+No. Telepon
+E-MAIL
 </div>
 <div class="contact">
-Contact
+Website ini dibuat oleh MGI studio untuk <br>memudahka pembelian DVD diseluruh Indonesia.
 </div>
 </footer>
 </body>
