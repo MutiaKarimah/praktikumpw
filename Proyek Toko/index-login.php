@@ -4,11 +4,11 @@
 		<link href="css/style.css" rel="stylesheet">
 	<?php
 	require_once('config.php');
-$query = "SELECT * FROM tb_user ";
+
 session_start();
 if(isset($_SESSION["username"])){
 }else{
- echo header("location:form-login.php");
+ echo header("location:form_login.php");
  
 }
 
@@ -45,8 +45,8 @@ if(isset($_SESSION["username"])){
 			<div class="login">
 			<form method="post" action="/log_out.php">	
 				 <div class="foto"></div>
-				<h4> Username	: <?php echo $_SESSION['username'];  ?> </h3>
-				<h4> ID	: #001 </h4> 
+				<h4> Username	: <?=$_SESSION['username'];  ?> </h3>
+				<h4> ID	: #00<?=$_SESSION['ID'];?> </h4> 
 				<button type="submit" value="Login">Logout</button>
 			</div>
 			</form><br>
