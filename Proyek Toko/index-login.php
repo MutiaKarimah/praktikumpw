@@ -2,6 +2,7 @@
 	<head>
 		<title> MGI's GAMESTORE</title>
 		<link href="css/style.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<?php
 	require_once('config.php');
 
@@ -47,7 +48,13 @@ if(isset($_SESSION["username"])){
 				 <div class="foto"></div>
 				<h4> Username	: <?=$_SESSION['username'];  ?> </h3>
 				<h4> ID	: #00<?=$_SESSION['ID'];?> </h4> 
-				<button type="submit" value="Login">Logout</button>
+				<?php if($_SESSION['username']=="admin")
+    {
+        echo "<a href='Admin.php' class='btn'>Admin <i class='fa fa-pen-square'></i></a>";
+    }else{
+        echo "<a href='Order.php' class='btn'>My Order <i class='fas fa-archive'></i></a>";
+    } ?>
+				<button type="submit" value="Login">Logout <i class="fa fa-sign-out-alt"></i></button>
 			</div>
 			</form><br>
 			<hr class="line">
